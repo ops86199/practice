@@ -12,14 +12,14 @@ pipeline {
             }
         }
 
-        satage('Mvn Build') {
+        stage('Maven Build') {
             steps {
                 sh '''
                 mvn clean package
                 '''
             }
         }
-        
+
         stage('Build Docker Image') {
             steps {
                 sh '''
