@@ -1,15 +1,15 @@
-# FROM eclipse-temurin:17-jdk-alpine
-# WORKDIR /app
+# Use a valid OpenJDK 17 base image
+FROM openjdk:17-jdk-slim
 
-# COPY . .
-
-# EXPOSE 8080
-# ENTRYPOINT ["java", "-jar", "app.jar"]
-# Use OpenJDK 17 as base image
-FROM openjdk:17
+# Set working directory
+WORKDIR /app
 
 # Copy the JAR file from target folder
 COPY target/myapp-1.0.jar app.jar
 
+# Expose port (optional, just for documentation)
+EXPOSE 8081
+
 # Run the JAR when container starts
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
