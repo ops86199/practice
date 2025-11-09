@@ -31,7 +31,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh 'docker rm -f jarvish || true'
-                sh 'docker run --name pream-d -p 8082:80 myapp:v0.0.3'
+                sh 'docker run --name pream -d -p 8083:80 myapp:v0.0.3'
                 
             }
         }
