@@ -14,6 +14,8 @@
 
 
 FROM ubuntu:20.04 AS prakash
+# Avoid timezone question
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt update -y && \
     apt install -y maven git openjdk-17-jdk && \
