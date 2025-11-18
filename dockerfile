@@ -12,7 +12,7 @@ FROM tomcat:9-jdk17
 RUN mkdir -p /usr/local/tomcat/webapps/myapp
 
 # Copy WAR file
-COPY --from=prakash /pratice/target/pratice-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/pratice.war
+COPY --from=prakash /pratice/target/pratice-1.0.war /usr/local/tomcat/webapps/pratice.war
 
 
 RUN chmod -R 755 /usr/local/tomcat/webapps/myapp
