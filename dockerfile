@@ -17,9 +17,7 @@ FROM ubuntu:20.04 AS prakash
 # Avoid timezone question
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt update -y && \
-    apt install -y maven git openjdk-17-jdk && \
-    git clone https://github.com/ops86199/pratice.git
+RUN git clone https://github.com/ops86199/pratice.git
 
 WORKDIR /pratice
 RUN mvn package
