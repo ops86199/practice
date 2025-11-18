@@ -17,8 +17,6 @@ FROM ubuntu:20.04 AS prakash
 # Avoid timezone question
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN git clone https://github.com/ops86199/pratice.git
-
 WORKDIR /pratice
 RUN mvn package
 
