@@ -30,7 +30,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh 'docker rm -f pream || true'
+                sh 'docker rmi -f pream || true'
                 sh 'docker run --name pream -d -p 8083:8080 myapp:v0.1.1'
                 
             }
@@ -52,7 +52,7 @@ pipeline {
             steps {
                 sshagent(['ec2-ssh']) {
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ec2-user@3.94.165.98 "
+                    ssh -o StrictHostKeyChecking=no ec2-user@54.242.11.19 "
                     docker pull ops86199/myapp:v0.1.1 &&
                     docker stop app || true &&
                     docker rm app || true &&
